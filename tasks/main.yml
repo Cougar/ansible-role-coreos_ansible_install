@@ -1,0 +1,11 @@
+---
+
+- name: Check if toolboxrc is needed
+  raw: stat $HOME/.toolboxrc
+  register: need_bootstrap
+  ignore_errors: True
+  changed_when: False
+
+- name: Run bootstrap.sh
+  script: bootstrap.sh
+  when: need_bootstrap | failed
