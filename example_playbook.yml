@@ -1,0 +1,5 @@
+- name: "coreos-bootstrap"
+  hosts: coreos
+  gather_facts: False
+  roles:
+    - coreos_ansible_install
