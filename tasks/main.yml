@@ -5,6 +5,7 @@
   register: need_bootstrap
   ignore_errors: True
   changed_when: False
+  failed_when: False
 
 - name: Run bootstrap.sh
   script: bootstrap.sh
