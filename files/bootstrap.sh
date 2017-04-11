@@ -4,7 +4,8 @@ set -e
 
 cd
 
-if [[ -e $HOME/.toolboxrc ]]; then
+# force update if any cmd line param exists
+if [[ ( -z "$1") && (-e $HOME/.toolboxrc ) ]]; then
   exit 0
 fi
 

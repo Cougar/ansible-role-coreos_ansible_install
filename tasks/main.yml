@@ -6,7 +6,9 @@
   ignore_errors: True
   changed_when: False
   failed_when: False
+  when: force is not defined
 
 - name: Run bootstrap.sh
-  script: bootstrap.sh
-  when: need_bootstrap | failed
+  script: "bootstrap.sh {{ force }}"
+  when: force is defined or need_bootstrap | failed
+  register: result
