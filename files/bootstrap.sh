@@ -11,6 +11,7 @@ fi
 cat > $HOME/.toolboxrc <<-EOF
 	TOOLBOX_DOCKER_IMAGE=v6net/coreos-ansible-toolbox
 	TOOLBOX_USER=root
+	TOOLBOX_DOCKER_TAG=edge
 EOF
 
 sudo mkdir --parents '/opt/bin'
